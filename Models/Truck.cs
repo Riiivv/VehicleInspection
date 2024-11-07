@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,7 @@ using VehicleInspection.Models;
 
 namespace VehicleInspection.Models
 {
-    public class Truck : VehicleWithWheels
+    public class Truck : Vehicle
     {
         public Truck(string brand, string model, DateTime productionDate, DateTime lastInspection) : base(brand, model, productionDate, lastInspection)
         {

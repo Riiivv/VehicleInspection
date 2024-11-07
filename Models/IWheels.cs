@@ -9,12 +9,9 @@ namespace VehicleInspection.Models
 {
     public interface IWheels
     {
-        int MaxRimSize { get; set; }
+       public int MaxRimSize { get; set; }
 
-        void SetTireType(bool IsWinterTire)
-        {
-
-        }
+       public void SetTireType(bool IsWinterTire);
         public string Info()
         {
             return "Brug mig for alle objekter som køres på hjul.";

@@ -7,7 +7,7 @@ using VehicleInspection.Models;
 
 namespace VehicleInspection.Models
 {
-    public class Car : VehicleWithWheels
+    public class Car : Vehicle
     {
         public Car(string brand, string model, DateTime productionDate, DateTime lastInspection)
             : base(brand, model, productionDate, lastInspection)

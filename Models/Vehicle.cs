@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VehicleInspection.Models
 {
-    public abstract class Vehicle
+    public abstract class Vehicle : IWheels
     {
         public string Brand { get; set; }
         public string Model { get; set; }
@@ -14,6 +14,7 @@ namespace VehicleInspection.Models
 
         public DateTime LastInspection { get; set; }
 
+        public int MaxRimSize { get; set; }
         protected Vehicle(string brand, string model, DateTime productionDate, DateTime lastInspection)
         {
             Brand = brand;
@@ -27,6 +28,13 @@ namespace VehicleInspection.Models
         public virtual string DisplayInfo()
         {
             return $"Brand: {Brand}, Model: {Model}, Production Date: {ProductionDate.ToShortDateString()}";
+        }
+
+        public abstract void SetTireType(bool isWinterTire);
+
+        public string GetInterfaceInfo()
+        {
+            return ((IWheels)this).Info();
         }
     }
 }
